@@ -2,55 +2,8 @@
 import * as React from 'react';
 import './IndexCom.less';
 import NavBar from './../../components/navBar/navBar';
-
-export type ThemeColorType = {
-  themeColor: string,
-  themeDeepColor: string
-};
-
-// 主题色
-const themeColorList: ThemeColorType[] = [
-  {
-    themeColor: '#fed518',
-    themeDeepColor: '#d4b106'
-  },
-  {
-    themeColor: '#ff4d4f',
-    themeDeepColor: '#cf1322'
-  },
-  {
-    themeColor: '#69c0ff',
-    themeDeepColor: '#096dd9'
-  },
-  {
-    themeColor: '#9254de',
-    themeDeepColor: '#531dab'
-  },
-  {
-    themeColor: '#f759ab',
-    themeDeepColor: '#eb2f96'
-  },
-  {
-    themeColor: '#9254de',
-    themeDeepColor: '#531dab'
-  },
-  {
-    themeColor: '#2f54eb',
-    themeDeepColor: '#1d39c4'
-  },
-  {
-    themeColor: '#52c41a',
-    themeDeepColor: '#237804'
-  },
-  {
-    themeColor: '#13c2c2',
-    themeDeepColor: '#006d75'
-  },
-  {
-    themeColor: '#fa8c16',
-    themeDeepColor: '#ad4e00'
-  }
-];
+import {themeColorList} from './../../static/ts/routeList';
+import SelfInfo from './../../components/selfInfo/selfInfo';
 
 export default (props: any) => {
 
@@ -60,7 +13,6 @@ export default (props: any) => {
   });
 
   React.useEffect(() => {
-    
     let right: string;
     let rotate: string;
     // 计算白色背景旋转角度和right值
@@ -80,12 +32,13 @@ export default (props: any) => {
   }, [])
 
   return (
-    <section className='index-container'>
+    <section className='index-container' id='index'>
       <div
         style={{...innerStyle}}
         className='index-container-inner'
       ></div>
       <NavBar />
+      <SelfInfo />
     </section>
   )
 }

@@ -29,10 +29,34 @@ export default (props: any) => {
         break;
       }
     }
+
+    document.addEventListener('scroll', throttle(documentListener, 0), false);
+
+    return () => {
+      document.removeEventListener('scroll', throttle(documentListener, 0), false);
+    }
   }, [])
 
+  function documentListener() {
+    setSectionHeight(document.documentElement.scrollTop);
+  }
+
+  // 函数节流
+  function throttle(fn: Function, duration: number) {
+    let begin: any = new Date();
+    return function() {
+      let end: any = new Date(),args = arguments;
+      if (end - begin >= duration) {
+        fn.apply(throttle, args);
+        begin = end;
+      }
+    }
+  }
+
+  const [sectionHeight, setSectionHeight] = React.useState(0);
+
   return (
-    <section className='index-container' id='index'>
+    <section style={{height: `calc(100vh - ${sectionHeight}px)`}} className='index-container' id='index'>
       <div
         style={{...innerStyle}}
         className='index-container-inner'

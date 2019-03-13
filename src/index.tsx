@@ -16,12 +16,19 @@ const Home = Loadable({
   timeout: 8000
 });
 
+const Canvas = Loadable({
+  loader: () => import('./pages/canvas/canvas'),
+  loading: Loading,
+  timeout: 8000
+});
+
 const Index = () => {
 
   return (
     <HashRouter> 
       <Switch>
         <Route path='/home' component={Home}/>
+        <Route path='/canvas' component={Canvas}/>
         <Route path='/' render={ () => {return <Redirect to='/home'/>} }/>
       </Switch>
     </HashRouter>

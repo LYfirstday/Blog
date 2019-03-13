@@ -6,11 +6,11 @@ export default () => {
   return (
     <>
       <IndexCom />
-      {/* <div style={{
-        height: '1500px',
+      <div style={{
+        height: '2500px',
         width: '100%',
         backgroundColor: 'red'
-      }}></div> */}
+      }}></div>
     </>
   )
 }

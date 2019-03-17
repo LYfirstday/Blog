@@ -22,57 +22,57 @@ const routeList: SideListItem[] = [
     index: 2,
   },
   {
-    context: 'React & nodejs',
+    context: 'React',
     path: '/index/creste',
     index: 3,
   }
 ];
 
-export type ThemeColorType = {
-  themeColor: string,
+export type themeLightColorType = {
+  themeLightColor: string,
   themeDeepColor: string
 };
 
 // 主题色
-const themeColorList: ThemeColorType[] = [
+const themeColorList: themeLightColorType[] = [
   {
-    themeColor: '#fed518',
+    themeLightColor: '#fed518',
     themeDeepColor: '#d4b106'
   },
   {
-    themeColor: '#ff4d4f',
+    themeLightColor: '#ff4d4f',
     themeDeepColor: '#cf1322'
   },
   {
-    themeColor: '#69c0ff',
+    themeLightColor: '#69c0ff',
     themeDeepColor: '#096dd9'
   },
   {
-    themeColor: '#9254de',
+    themeLightColor: '#9254de',
     themeDeepColor: '#531dab'
   },
   {
-    themeColor: '#f759ab',
+    themeLightColor: '#f759ab',
     themeDeepColor: '#eb2f96'
   },
   {
-    themeColor: '#9254de',
+    themeLightColor: '#9254de',
     themeDeepColor: '#531dab'
   },
   {
-    themeColor: '#2f54eb',
+    themeLightColor: '#2f54eb',
     themeDeepColor: '#1d39c4'
   },
   {
-    themeColor: '#52c41a',
+    themeLightColor: '#52c41a',
     themeDeepColor: '#237804'
   },
   {
-    themeColor: '#13c2c2',
+    themeLightColor: '#13c2c2',
     themeDeepColor: '#006d75'
   },
   {
-    themeColor: '#fa8c16',
+    themeLightColor: '#fa8c16',
     themeDeepColor: '#ad4e00'
   }
 ];

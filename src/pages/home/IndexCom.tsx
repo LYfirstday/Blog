@@ -4,6 +4,7 @@ import './IndexCom.less';
 import NavBar from './../../components/navBar/navBar';
 import {themeColorList} from './../../static/ts/routeList';
 import SelfInfo from './../../components/selfInfo/selfInfo';
+import LatestArticleCom from './latestArticleCom';
 
 export default (props: any) => {
 
@@ -20,16 +21,18 @@ export default (props: any) => {
       let rightValue = Math.floor(Math.random() * 10);
       let rotateValue = Math.floor(Math.random() * 10);
       let themeColorValue = Math.floor(Math.random() * 10);
+      let documentElement = document.body;
       if (rightValue >=2 && rightValue <= 6 && rotateValue >=2 && rotateValue <= 3.5) {
         right = `${rightValue}0%`;
         rotate = `rotate(-${rotateValue}0deg)`;
         setInnerStyle({right: right, transform: rotate});
-        document.documentElement.style.setProperty('--themeColor', themeColorList[themeColorValue].themeColor);
-        document.documentElement.style.setProperty('--navBarDeepColor', themeColorList[themeColorValue].themeDeepColor);
+        documentElement.style.setProperty('--themeColor', themeColorList[themeColorValue].themeLightColor);
+        documentElement.style.setProperty('--navBarDeepColor', themeColorList[themeColorValue].themeDeepColor);
         break;
       }
     }
 
+    // 如果设置duration，会出现index界面合不住bug
     document.addEventListener('scroll', throttle(documentListener, 0), false);
 
     return () => {
@@ -37,8 +40,17 @@ export default (props: any) => {
     }
   }, [])
 
+  const [sectionHeight, setSectionHeight] = React.useState(0);
+
   function documentListener() {
-    setSectionHeight(document.documentElement.scrollTop);
+    let documentScrollTop: number;
+    // 兼容ie ,opera浏览器
+    if (document.documentElement.scrollTop > 0) {
+      documentScrollTop = document.documentElement.scrollTop;
+    } else {
+      documentScrollTop = document.body.scrollTop;
+    }
+    setSectionHeight(documentScrollTop);
   }
 
   // 函数节流
@@ -53,8 +65,6 @@ export default (props: any) => {
     }
   }
 
-  const [sectionHeight, setSectionHeight] = React.useState(0);
-
   return (
     <section style={{height: `calc(100vh - ${sectionHeight}px)`}} className='index-container' id='index'>
       <div
@@ -63,6 +73,7 @@ export default (props: any) => {
       ></div>
       <NavBar />
       <SelfInfo />
+      <LatestArticleCom />
     </section>
   )
 }

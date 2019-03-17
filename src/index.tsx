@@ -33,7 +33,7 @@ const Index = () => {
       </Switch>
     </HashRouter>
   )
-}
+} 
 
 ReactDOM.render(
   <Index />,

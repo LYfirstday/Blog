@@ -1,0 +1,25 @@
+.main-article-list {
+  display: flex;
+  justify-content: center;
+  margin-top: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  &-inner {
+    z-index: 2;
+    position: relative;
+    width: 62%;
+    height: 100vh;
+    color: #111;
+  }
+  &-bacColor {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--themeColor);
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+  }
+}
+

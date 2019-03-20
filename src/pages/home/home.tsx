@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './home.less';
 import IndexCom from './IndexCom';
-import ArticleListCom from './../../components/articleListCom/articleListCom';
+import ArticleCard from '../../components/articleCard/articleCard';
 
 export default () => {
 
@@ -10,11 +10,13 @@ export default () => {
       <IndexCom />
       <section className='main-article-list'>
         <div className='main-article-list-inner'>
-          <div className='main-article-list-bacColor'></div>
-          <ArticleListCom/>
-          <ArticleListCom/>
-          <ArticleListCom/>
-          <ArticleListCom/>
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
+          <ArticleCard />
         </div>
       </section>
     </>

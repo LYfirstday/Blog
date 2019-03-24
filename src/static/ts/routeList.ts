@@ -8,7 +8,7 @@ export interface SideListItem {
 const routeList: SideListItem[] = [
   {
     context: 'javascript',
-    path: '/index',
+    path: '/articleList',
     index: 0,
   },
   {

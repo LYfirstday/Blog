@@ -13,6 +13,7 @@
   border-radius: 4px;
   &-bac {
     position: absolute;
+    z-index: 4;
     top: 0;
     left: 0;
     opacity: .1;
@@ -21,7 +22,7 @@
     transition: all .3s;
   }
   &:hover {
-    box-shadow: 0 0 10px 2px #ddd;
+    box-shadow: 0 0 5px 0 var(--themeColor);
     .article-list-bac {
       background-color: var(--themeColor);
     }

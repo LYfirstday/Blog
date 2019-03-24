@@ -4,7 +4,6 @@ import './IndexCom.less';
 import NavBar from './../../components/navBar/navBar';
 import {themeColorList} from './../../static/ts/routeList';
 import SelfInfo from './../../components/selfInfo/selfInfo';
-import LatestArticleCom from './latestArticleCom';
 
 export default (props: any) => {
 
@@ -73,7 +72,6 @@ export default (props: any) => {
       ></div>
       <NavBar />
       <SelfInfo />
-      <LatestArticleCom />
     </section>
   )
 }

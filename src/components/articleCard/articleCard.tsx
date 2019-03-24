@@ -19,10 +19,6 @@ export default () => {
         </div>
         <p className='line-bac'></p>
         <div className='article-list-footer'>
-          <div className='browsed'>
-            <img src={require('./../../static/imgs/browsed.png')} />
-            <span>666</span>
-          </div>
           <div className='leave-message'>
             <img src={require('./../../static/imgs/leave-message.png')} />
             <span>32</span>
